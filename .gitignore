@@ -1,0 +1,4 @@
+# inputs are not shared because the website author doesn't want that
+# Here is a reddit post where a user asked about sharing input files:
+# https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/
+input.txt

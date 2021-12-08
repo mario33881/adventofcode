@@ -1,0 +1,39 @@
+Segments length of each digit:
+0: len 6
+1: len 2
+2: len 5
+3: len 5
+4: len 4
+5: len 5
+6: len 6
+7: len 3
+8: len 7
+9: len 6
+
+Re-written so that len equals a digit:
+len 2 -> 1
+len 3 -> 7
+len 4 -> 4
+len 5 -> 2, 3, 5
+len 6 -> 0, 6, 9
+len 7 -> 8
+
+After studing the length and patterns of each number I've reached the following conclusion.
+
+Knowing the combinations of 1, 4, 7, 8 we can find the other combinations:
+
+STEP 1: discriminate 0, 6 and 9 (and distinguish them from the other numbers):
+if length of signal is 6 -> result is one of 0, 6 or 9
+if the signal contains a combination of 1 -> result is 0 or 9
+                                otherwise -> result is 6
+if the signal contains a combination of 3 -> result is 9
+                                otherwise -> result is 0
+
+STEP 2: discriminate between 2, 3 and 5:
+if length of signal is 5 -> result is 2/3/5
+if the signal contains a combination of 1 -> result is 3
+                                otherwise -> result is 2 or 5
+if adding a segment of the combination of 1 results in 9 -> result is 5
+                                             otherwise   -> result is 2
+--> notice that one segment of the 1 combination already needs to be present
+    for the signal to become a 9 once you add the other segment
